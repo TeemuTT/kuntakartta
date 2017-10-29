@@ -5,6 +5,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const index = require('./routes/index');
+const regions = require('./routes/regions');
+const municipalities = require('./routes/municipalities');
 
 const app = express();
 
@@ -14,6 +16,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', index);
+app.use('/regions', regions);
+app.use('/municipalities', municipalities);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

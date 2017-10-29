@@ -3,7 +3,6 @@ const router = express.Router();
 const db = require('../database.js');
 const debug = require('debug')('backend:server/');
 
-/* GET home page. */
 router.get('/', async (req, res, next) => {
   try {
     const response = await db.testConnection();
