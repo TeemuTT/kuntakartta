@@ -1,0 +1,31 @@
+
+version: '2'
+services:
+  frontend:
+    build: frontend/
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/usr/src/app/src
+
+  backend:
+    build: backend/
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend/src:/usr/src/app/src
+    environment:
+      - DEBUG=backend:*
+      - DB_USER=teemu
+      - DB_PASSWORD=password
+      - DB_DATABASE=suomi
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:9.6.3
+    environment:
+      - POSTGRES_USER=teemu
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
