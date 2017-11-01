@@ -1,0 +1,6 @@
+
+.map-container {
+    height: 300px;
+    flex-basis: 50%;
+    background-color: #f16666;
+}

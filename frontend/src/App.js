@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
-// import logo from './logo.svg';
-// import './App.css';
+
+import Map from './Map/Map.js';
+import ResultTable from './ResultTable/ResultTable.js';
+import ControlPanel from './ControlPanel/ControlPanel.js';
+import QueryBuilder from './QueryBuilder/QueryBuilder.js';
+
+import './App.css';
 
 class App extends Component {
 
@@ -35,6 +40,12 @@ class App extends Component {
       <div className="App">
         {this.state.population ? "Population of Finland: " + this.state.population
         : "Loading..."}
+        <div className="row">
+          <Map />
+          <ResultTable />
+        </div>
+        <ControlPanel />
+        <QueryBuilder />
       </div>
     );
   }
