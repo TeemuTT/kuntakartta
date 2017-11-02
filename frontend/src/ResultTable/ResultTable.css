@@ -1,5 +1,8 @@
 
 .result-table-container {
     flex-basis: 67%;
-    background-color: #668bf1;
+}
+
+table {
+    margin: auto;
 }

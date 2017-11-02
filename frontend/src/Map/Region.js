@@ -5,7 +5,11 @@ import './Region.css';
 const Region = (props) => {
   const {region} = props;
   const municipalities = region.kunnat.map(m  => {
-    return <Municipality d={m.d} id={m.id} key={m.id} />
+    return <Municipality
+      d={m.d}
+      id={m.id}
+      key={m.id}
+      onClick={(id) => props.onMunicipalityClick(id)} />
   });
   return (
     <g className="region">

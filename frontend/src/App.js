@@ -37,14 +37,37 @@ class App extends Component {
     }
   }
 
+  fetchMunicipalityInfo = async (id) => {
+    try {
+      const url = 'http://localhost:3001/municipalities/' + id;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Error while requesting ' + url);
+      }
+      const data = await response.json();
+      this.setState({
+        info: data
+      });
+    } catch(e) {
+      console.log(e);
+    }
+  }
+
+  onMunicipalityClick = (id) => {
+    console.log(id + ' clicked');
+    this.fetchMunicipalityInfo(id);
+  }
+
   render() {
     return (
       <div className="App">
         {this.state.population ? "Population of Finland: " + this.state.population
         : "Loading..."}
         <div className="row">
-          <Map data={data}/>
-          <ResultTable />
+          <Map
+            data={data}
+            onMunicipalityClick={(id) => this.onMunicipalityClick(id)} />
+          <ResultTable info={this.state.info} />
         </div>
         <ControlPanel />
         <QueryBuilder />

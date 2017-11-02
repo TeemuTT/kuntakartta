@@ -6,7 +6,10 @@ class Map extends Component {
   render() {
     const {data} = this.props;
     const regions = data.map(region => {
-      return <Region region={region} key={region.id} />
+      return <Region
+        region={region}
+        key={region.id}
+        onMunicipalityClick={(id) => this.props.onMunicipalityClick(id)} />
     });
 
     return (
