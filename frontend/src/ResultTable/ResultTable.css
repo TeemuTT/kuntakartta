@@ -1,6 +1,5 @@
 
 .result-table-container {
-    height: 300px;
-    flex-basis: 50%;
+    flex-basis: 67%;
     background-color: #668bf1;
 }

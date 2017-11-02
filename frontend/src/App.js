@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import data from './data.json';
+
 import Map from './Map/Map.js';
 import ResultTable from './ResultTable/ResultTable.js';
 import ControlPanel from './ControlPanel/ControlPanel.js';
@@ -41,7 +43,7 @@ class App extends Component {
         {this.state.population ? "Population of Finland: " + this.state.population
         : "Loading..."}
         <div className="row">
-          <Map />
+          <Map data={data}/>
           <ResultTable />
         </div>
         <ControlPanel />

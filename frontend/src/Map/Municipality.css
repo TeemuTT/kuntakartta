@@ -1,0 +1,11 @@
+
+.municipality-path {
+  pointer-events: all;
+  stroke: #000000;
+  stroke-width:0.04473142;
+  fill: none;
+}
+
+.municipality-path:hover {
+  fill: #3bdb35;
+}
