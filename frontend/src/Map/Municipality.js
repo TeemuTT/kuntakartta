@@ -7,7 +7,9 @@ const Municipality = (props) => {
     <path
       d={d}
       className="municipality-path"
-      onClick={() => props.onClick(id)} />
+      onClick={() => props.onClick(id)}>
+      <title>{id}</title>
+    </path>
   );
 }
 

@@ -1,0 +1,24 @@
+
+.table-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: #3f6deb;
+}
+
+th {
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+
+span {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.selected {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    cursor: initial;
+}

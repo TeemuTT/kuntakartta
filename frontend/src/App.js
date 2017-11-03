@@ -16,27 +16,6 @@ class App extends Component {
     this.state = {}
   }
 
-  componentDidMount() {
-    this.testApiConnection();
-  }
-
-  async testApiConnection() {
-    try {
-      let response = await fetch('http://localhost:3001');
-      
-      if (!response.ok) {
-        throw new Error('Error while fetching resource');
-      }
-
-      let data = await response.json();
-      this.setState({
-        population: data.population
-      });
-    } catch(e) {
-      console.log(e);
-    }
-  }
-
   fetchMunicipalityInfo = async (id) => {
     try {
       const url = 'http://localhost:3001/municipalities/' + id;
@@ -61,8 +40,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.population ? "Population of Finland: " + this.state.population
-        : "Loading..."}
         <div className="row">
           <Map
             data={data}

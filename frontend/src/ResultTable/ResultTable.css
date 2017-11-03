@@ -5,4 +5,14 @@
 
 table {
     margin: auto;
+    font-size: 18px;
+}
+
+td {
+    text-align: left;
+    padding: 2px 0px;
+}
+
+td:first-child {
+    padding-right: 15px;
 }
