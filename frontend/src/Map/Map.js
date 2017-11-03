@@ -4,9 +4,10 @@ import './Map.css';
 
 class Map extends Component {
   render() {
-    const {data} = this.props;
+    const {data, selectedItems} = this.props;
     const regions = data.map(region => {
       return <Region
+        selectedItems={selectedItems}
         region={region}
         key={region.id}
         onMunicipalityClick={(id) => this.props.onMunicipalityClick(id)} />

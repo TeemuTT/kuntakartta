@@ -1,12 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './ControlPanel.css';
 
-class ControlPanel extends Component {
-  render() {
-    return (
-      <div className="control-panel-container"></div>
-    );
-  }
+const Button = (props) => {
+  return (
+    <button onClick={() => props.onClick()}>
+      {props.text}
+    </button>
+  );
+}
+
+const ControlPanel = (props) => {
+  const buttons = props.buttons.map((button, i) => {
+    return <Button text={button.text} onClick={() => button.onClick()} key={i}/>
+  });
+  return (
+    <div className="control-panel-container">
+      <h2>Kokeile näitä!</h2>
+      <div className="control-container">
+        {buttons}
+      </div>
+    </div>
+  );
 }
 
 export default ControlPanel;

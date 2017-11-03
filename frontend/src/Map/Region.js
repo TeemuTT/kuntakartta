@@ -3,9 +3,11 @@ import Municipality from './Municipality.js';
 import './Region.css';
 
 const Region = (props) => {
-  const {region} = props;
+  const {region, selectedItems} = props;
   const municipalities = region.kunnat.map(m  => {
+    const selected = selectedItems && selectedItems.indexOf(m.id) !== -1;
     return <Municipality
+      selected={selected}
       d={m.d}
       id={m.id}
       key={m.id}
