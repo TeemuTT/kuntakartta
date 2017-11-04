@@ -1,5 +1,31 @@
 
 .query-builder-container {
-    height: 150px;
-    /* background-color: #d3b03f; */
+    margin-top: 40px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    border: 1px solid #a8a8a8;
+}
+
+form {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: baseline;
+}
+
+input {
+    margin: 5px 0px;
+}
+
+.radio-with-label {
+    padding: 3px;
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: left;
+}
+
+.formfield {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: left;
 }

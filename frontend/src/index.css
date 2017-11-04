@@ -5,7 +5,7 @@
 }
 
 body {
-  padding: 0;
+  padding: 0px;
   margin: auto;
   max-width: 1260px;
   font-family: 'Lato', sans-serif;
@@ -18,5 +18,5 @@ h1 {
 
 footer {
   text-align: center;
-  padding-bottom: 200px;
+  padding: 50px 0px 200px 0px;
 }

@@ -1,7 +1,7 @@
 
 .control-panel-container {
-    height: 150px;
-    /* background-color: #47b450; */
+    margin-top: 20px;
+    padding-bottom: 20px;
     border: 1px solid #a8a8a8;
     border-radius: 10px;
 }

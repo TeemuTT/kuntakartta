@@ -63,6 +63,11 @@ class App extends Component {
     }
   }
 
+  onQueryBuilderSubmit = (target, field, order, limit) => {
+    let url = `http://localhost:3001/${target}?field=${field}&order=${order}&limit=${limit}`;
+    this.runQuery(url);
+  }
+
   render() {
     const controlPanelButtons = [
       {
@@ -98,11 +103,11 @@ class App extends Component {
           <Map
             data={data}
             selectedItems={this.state.selectedItems}
-            onMunicipalityClick={(id) => this.onMunicipalityClick(id)} />
+            onMunicipalityClick={this.onMunicipalityClick.bind(this)} />
           <ResultTable info={this.state.info} />
         </div>
         <ControlPanel buttons={controlPanelButtons}/>
-        <QueryBuilder />
+        <QueryBuilder onSubmit={this.onQueryBuilderSubmit.bind(this)}/>
       </div>
     );
   }

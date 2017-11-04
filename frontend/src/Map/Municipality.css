@@ -9,7 +9,7 @@
 
 .municipality-path:hover, .selected:hover {
   fill: #3bdb35;
-  transition: fill .5s;
+  transition: fill .05s;
 }
 
 .selected {
