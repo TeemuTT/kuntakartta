@@ -5,7 +5,10 @@ import './Region.css';
 const Region = (props) => {
   const {region, selectedItems} = props;
   const municipalities = region.kunnat.map(m  => {
-    const selected = selectedItems && selectedItems.indexOf(m.id) !== -1;
+    let selected = false;
+    if ((selectedItems && selectedItems.indexOf(m.id) !== -1)) {
+      selected = true;
+    }
     return <Municipality
       selected={selected}
       d={m.d}

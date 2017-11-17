@@ -3,7 +3,7 @@ import './ControlPanel.css';
 
 const Button = (props) => {
   return (
-    <button onClick={() => props.onClick()}>
+    <button onClick={props.onClick}>
       {props.text}
     </button>
   );
@@ -11,7 +11,7 @@ const Button = (props) => {
 
 const ControlPanel = (props) => {
   const buttons = props.buttons.map((button, i) => {
-    return <Button text={button.text} onClick={() => button.onClick()} key={i}/>
+    return <Button text={button.text} onClick={button.onClick} key={i}/>
   });
   return (
     <div className="control-panel-container">

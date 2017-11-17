@@ -1,0 +1,23 @@
+
+.compare-table-container {
+    flex-basis: 67%;
+}
+
+table {
+    margin: auto;
+    font-size: 18px;
+}
+
+td {
+    text-align: center;
+    padding: 2px 0px;
+}
+
+td:first-child {
+    text-align: left;
+    padding-right: 15px;
+}
+
+select {
+    max-width: 250px;
+}
