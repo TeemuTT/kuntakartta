@@ -8,13 +8,19 @@ class ResultTable extends Component {
     super();
     this.state = {
       categories: ['Koulutus', 'Väestö', 'Työllisyys'],
-      selected: 'Väestö'
+      selected: 'Väestö',
+      flash: true
     };
+  }
+
+  componentWillReceiveProps = (nextProps) => {
+    this.setState({flash: true});
   }
 
   onHeaderClick = (header) => {
     this.setState({
-      selected: header
+      selected: header,
+      flash: true
     });
   }
 
@@ -35,6 +41,12 @@ class ResultTable extends Component {
       );
     });
 
+    setTimeout(() => {
+      if (this.state.flash === true) {
+        this.setState({flash: false});
+      }
+    }, 1000);
+
     return (
       <div className="result-table-container">
         <h2>{info.nimi}</h2>
@@ -48,7 +60,7 @@ class ResultTable extends Component {
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className={this.state.flash && 'flash'}>
             {rows}
           </tbody>
         </table>

@@ -11,4 +11,10 @@
   flex-basis: 67%;
   font-size: 20px;
   text-align: center;
+  animation: fadein 1s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to { opacity: 1 }
 }

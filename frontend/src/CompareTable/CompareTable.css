@@ -1,6 +1,7 @@
 
 .compare-table-container {
     flex-basis: 67%;
+    animation: fadein 1s;
 }
 
 table {
@@ -20,4 +21,8 @@ td:first-child {
 
 select {
     max-width: 250px;
+}
+
+.flash {
+    animation: fadein 1s;
 }

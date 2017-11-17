@@ -1,6 +1,7 @@
 
 .result-table-container {
     flex-basis: 67%;
+    animation: fadein 1s;
 }
 
 table {
@@ -15,4 +16,8 @@ td {
 
 td:first-child {
     padding-right: 15px;
+}
+
+.flash {
+    animation: fadein 1s;
 }

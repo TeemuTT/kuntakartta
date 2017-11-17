@@ -74,6 +74,7 @@ class App extends Component {
     let url = `http://localhost:3001/${target}?field=${field}&order=${order}&limit=${limit}`;
     const options = {field: field, order: order};
     this.runQuery(url, options);
+    window.scrollTo(0,0);
   }
 
   render() {

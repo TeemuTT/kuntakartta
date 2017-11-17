@@ -6,15 +6,19 @@ import { units } from './UnitMapper.js';
 class CompareTable extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      field: props.options.field
-    };
+    if (props.options) {
+      this.state = {
+        field: props.options.field,
+        flash: true
+      };
+    }
   }
 
   componentWillReceiveProps = (nextProps) => {
     if (nextProps.options) {
       this.setState({
-        field: nextProps.options.field
+        field: nextProps.options.field,
+        flash: true
       });
     }
   }
@@ -57,6 +61,12 @@ class CompareTable extends Component {
       );
     });
 
+    setTimeout(() => {
+      if (this.state.flash === true) {
+        this.setState({ flash: false })
+      }
+    }, 1000);
+
     return (
       <div className="compare-table-container">
         <table>
@@ -70,7 +80,7 @@ class CompareTable extends Component {
               </th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className={this.state.flash && 'flash'}>
             {rows}
           </tbody>
         </table>
