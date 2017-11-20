@@ -6,7 +6,14 @@
 
 table {
     margin: auto;
-    font-size: 18px;
+    font-size: 22px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #ffffffb3;
+}
+
+h2 {
+    font-size: 38px;
 }
 
 td {

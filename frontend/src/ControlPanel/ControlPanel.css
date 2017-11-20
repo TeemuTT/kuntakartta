@@ -4,10 +4,15 @@
     padding-bottom: 20px;
     border: 1px solid #a8a8a8;
     border-radius: 10px;
+    background-color: #ffffff93;
 }
 
 .control-container {
     display: flex;
     flex-flow: row;
     justify-content: space-around;
+}
+
+button {
+    font-size: 18px;
 }

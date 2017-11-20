@@ -1,9 +1,11 @@
 
 .query-builder-container {
     margin-top: 40px;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
     border-radius: 10px;
     border: 1px solid #a8a8a8;
+    background-color: #ffffff93;
+    font-size: 18px;
 }
 
 form {
@@ -13,8 +15,9 @@ form {
     align-items: baseline;
 }
 
-input {
+input, select {
     margin: 5px 0px;
+    font-size: 18px;
 }
 
 .radio-with-label {
