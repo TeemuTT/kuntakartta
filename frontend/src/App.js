@@ -14,7 +14,10 @@ class App extends Component {
 
   constructor() {
     super();
-    this.state = {}
+    this.state = {
+      selectionMode: 'region',
+      selectedResults: []
+    }
   }
 
   fetchMunicipalityInfo = async (id) => {
@@ -36,7 +39,35 @@ class App extends Component {
   }
 
   onMunicipalityClick = (id) => {
-    this.fetchMunicipalityInfo(id);
+    if (this.state.selectionMode === 'municipality') {
+      this.fetchMunicipalityInfo(id);
+    }
+  }
+
+  fetchRegionInfo = async (id) => {
+    try {
+      const url = 'http://localhost:3001/regions/' + id;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error('Error while requesting ' + url);
+      }
+      const data = await response.json();
+      this.setState({
+        info: data,
+        selectedItems: [data.nimi],
+        selectedResults: null,
+        selectionMode: 'municipality',
+        selectedRegion: data.nimi
+      });
+    } catch(e) {
+      console.log(e);
+    }
+  }
+
+  onRegionClick = (id) => {
+    if (this.state.selectionMode === 'region') {
+      this.fetchRegionInfo(id);
+    }
   }
 
   paintResults = (results, options) => {
@@ -77,6 +108,14 @@ class App extends Component {
     window.scrollTo(0,0);
   }
 
+  onRegionCloseClick = () => {
+    this.setState({
+      selectedRegion: null,
+      selectedResults: [],
+      selectionMode: 'region'
+    });
+  }
+
   render() {
     const controlPanelButtons = [
       {
@@ -109,21 +148,28 @@ class App extends Component {
       }
     ];
 
-    const showHelp = !this.state.info && (!this.state.selectedResults || this.state.selectedResults.length === 0)
-
     return (
       <div className="App">
         <div className="row">
           <Map
             data={data}
             selectedItems={this.state.selectedItems}
-            onMunicipalityClick={this.onMunicipalityClick.bind(this)} />
-          {this.state.info && <ResultTable info={this.state.info} />}
-          {this.state.selectedResults && <CompareTable results={this.state.selectedResults} options={this.state.queryOptions} />}
-          {showHelp && <p className="help-text">Aloita valitsemalla kartalta jokin kunta!</p>}
+            onMunicipalityClick={this.onMunicipalityClick}
+            onRegionClick={this.onRegionClick}
+            onRegionCloseClick={this.onRegionCloseClick}
+            selectionMode={this.state.selectionMode}
+            selectedRegion={this.state.selectedRegion} />
+
+          {this.state.info
+          ? <ResultTable info={this.state.info} />
+          : this.state.selectedResults.length > 0
+            ? <CompareTable results={this.state.selectedResults} options={this.state.queryOptions} />
+            : <p className="help-text">Aloita valitsemalla kartalta jokin maakunta!</p>}
         </div>
+
         <ControlPanel buttons={controlPanelButtons}/>
-        <QueryBuilder onSubmit={this.onQueryBuilderSubmit.bind(this)}/>
+        <QueryBuilder onSubmit={this.onQueryBuilderSubmit}/>
+
       </div>
     );
   }

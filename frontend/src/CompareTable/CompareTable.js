@@ -31,7 +31,7 @@ class CompareTable extends Component {
 
   render() {
     const { results } = this.props;
-    if (!results || results.length < 2) {
+    if (!results) {
       return null;
     }
 
@@ -74,7 +74,7 @@ class CompareTable extends Component {
             <tr>
               <th>Kunta</th>
               <th>
-                <select value={this.state.field} onChange={this.handleChange.bind(this)}>
+                <select value={this.state.field} onChange={this.handleChange}>
                   {fieldOptions}
                 </select>
               </th>

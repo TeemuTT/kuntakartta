@@ -1,4 +1,13 @@
 
 .map-container {
     flex-basis: 33%;
+    text-align: right;
+}
+
+#region-close {
+    color: #e43939;
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
 }

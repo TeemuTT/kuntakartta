@@ -1,18 +1,22 @@
 
-.municipality-path {
+.municipality {
   pointer-events: all;
   stroke: #000000;
   stroke-width:0.12473142;
-  fill: #fff;
+  fill: none;
   transition: fill .5s;
 }
 
-.municipality-path:hover, .selected:hover {
-  fill: #3bdb35;
-  transition: fill .05s;
+.municipality.active {
+  fill: #fff;
 }
 
-.selected {
-  fill: #3169c2;
+.municipality.selected {
+  fill: #5f8fd8;
   transition: fill 2s;
+}
+
+.municipality.active:hover {
+  fill: #3577db;
+  transition: fill .05s;
 }

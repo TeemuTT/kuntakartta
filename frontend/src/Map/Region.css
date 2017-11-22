@@ -4,7 +4,20 @@
   fill: none;
 }
 
+.region.active {
+  fill: #fff;
+}
+
+.region.selected {
+  fill: #5f8fd8;
+}
+
 .region-path {
   stroke: #000000;
   stroke-width: 0.0706613;
+}
+
+.region.active:hover, .region.selected:hover {
+  fill: #3577db;
+  transition: fill .05s;
 }
