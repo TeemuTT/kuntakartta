@@ -4,7 +4,8 @@
 Teemu Tuomela H8705  
 TTMS0500 Web-ohjelmointi  
 
-Sovellus on nähtävillä osoitteessa:
+Sovellus on nähtävillä DigitalOcean:in palvelimella osoitteessa:
+[http://146.185.183.122/](http://146.185.183.122/)
 
 ## Yleiskuvaus
 ![Sovellus](readme-images/app.jpg)
@@ -48,9 +49,9 @@ Lähdekoodin rakenne on mielestäni selkeä ja hyvin jaoteltu. Uusien ominaisuuk
 Käyttöliittymän reponsiivisuuteen en ehtinyt paneutua. Käyttöliittymä ei nykyisellään ole pienellä näytölle käytettävä.  
 
 ## Asennus
-Projekti on luotu create-react-app työkalulla Ubuntu 16.04 ympäristössä käyttäen npm versiota 3.10.10 ja node.js versiota 6.12.0.  
+Tämän projektin kehitysympäristön asennus onnistuu helposti, mikäli sinulla on asennettuna docker sekä docker-compose. Huomaa kuitenkin, että ympäristön asennus vie useamman sataa megatavua levytilaa. Projekti on luotu create-react-app työkalulla, joka asentaa node_modules kansioon kaikenlaista ylimääräistä ~200MB arvosta. Myös PostgreSQL kontti yksissään on ~300MB. Käyttöliittymä ja palvelin käyttävät mhart/alpine-node konttia, joka on 66,3MB.  
 
-Tämän projektin kehitysympäristön asennus onnistuu helposti, mikäli sinulla on asennettuna docker sekä docker-compose. Kloonaa repositorio, siirry hakemiston juureen ja suorita docker-compose.yml komennolla
+Kloonaa repositorio, siirry hakemiston juureen ja suorita docker-compose.yml komennolla
 ```
 docker-compose up
 ```
