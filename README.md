@@ -5,16 +5,17 @@ Teemu Tuomela H8705
 TTMS0500 Web-ohjelmointi  
 
 Sovellus on nähtävillä osoitteessa:
-[link]
 
 ## Yleiskuvaus
-[img sovellus]  
+![Sovellus](readme-images/app.jpg)
+
 Kuntakartta-sovelluksella käyttäjä voi hiirellä klikkaamalla valita niin maakunta kuin kuntatasolla tarkasteltavan kohteen. Klikattaessa kohdetta, kohteen tiedot haetaan dynaamisesti palvelimelta. Valitun kohteen avainluvut esitetään kartan vierellä taulukossa. Taulukosta käyttäjä voi tarkastella lukuja jaoteltuina kategorioihin koulutus, väestö ja työllisyys. Esitettävä data on haettu tilastokeskuksen avoimesta rajapinnasta csv-muodossa, josta rakensin tätä sovellusta varten relaatiotietokannan.  
 
 Käyttöliittymä on toteutettu React-kirjastolla ja se löytyy frontend kansiosta. Palvelintoteutus on toteutettu Node.js + express.js pohjalta ja se löytyy backend kansiosta. Tietovarastona toimii PostgreSQL tietokanta. Tietokannan luontitiedosto init.sql löytyy repositorion juuresta.  
 
 ## Sovelluksen rakenne
-[img hierarkia]
+
+![Hierarkia](readme-images/rakenne.png)
 
 Sovelluksen kokoaa App-komponentti. Tämä komponentti sisältää sovelluksen tilan state-muuttujassa sekä huolehtii ajax-kutsujen suorittamisesta ja niistä saadun datan välittämisestä alemmille komponenteille esitettäväksi. Alemmille komponenteille välitetään takaisinkutsufunktioita, joiden avulla tieto käyttäjän toiminnoista välitetään ylös App-komponentille.  
 
@@ -27,15 +28,15 @@ Sovelluksen kokoaa App-komponentti. Tämä komponentti sisältää sovelluksen t
 ## Kartan piirto
 Map-komponentti hoitaa kartan piirtämisen. Kartta piirretään svg-elementtinä. Path-elementtien d-attribuutti määrittää polun piirtämiseen käytetyn tiedon. Nämä tiedot luetaan data.json tiedostosta. Map-komponentti luo svg-elementin ja luo sen sisälle Region-komponentit (maakunnat).  
 
-[img map]
+![Map-komponentin render-funktio](readme-images/mapjs-render.PNG)
 
 Region-komponentit luovat g-elementin ja sen sisälle omat rajansa path-elementtinä sekä kunnat Municipality-komponentteina.  
 
-[img region]
+![Region-komponentin render-funktio](readme-images/regionjs-render.PNG)
 
 Municipality-komponentin tehtäväksi jää ainoastaan piirtää omat kuntarajansa path-elementtinä.  
 
-[img municipality]
+![Municipality-komponentin render-funktio](readme-images/municipality-render.PNG)
 
 ## Itsearvio
 Ehdotan harjoitustyölle arvosanaa 5.  
