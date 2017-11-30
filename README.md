@@ -10,7 +10,13 @@ Sovellus on nähtävillä DigitalOcean:in palvelimella osoitteessa:
 ## Yleiskuvaus
 ![Sovellus](readme-images/app.jpg)
 
-Kuntakartta-sovelluksella käyttäjä voi hiirellä klikkaamalla valita niin maakunta kuin kuntatasolla tarkasteltavan kohteen. Klikattaessa kohdetta, kohteen tiedot haetaan dynaamisesti palvelimelta. Valitun kohteen avainluvut esitetään kartan vierellä taulukossa. Taulukosta käyttäjä voi tarkastella lukuja jaoteltuina kategorioihin koulutus, väestö ja työllisyys. Esitettävä data on haettu tilastokeskuksen avoimesta rajapinnasta csv-muodossa, josta rakensin tätä sovellusta varten relaatiotietokannan.  
+Kuntakartta-sovelluksella käyttäjä voi hiirellä klikkaamalla valita niin maakunta kuin kuntatasolla tarkasteltavan kohteen. Klikattaessa kohdetta, kohteen tiedot haetaan dynaamisesti palvelimelta. Valitun kohteen avainluvut esitetään kartan vierellä taulukossa. Taulukosta käyttäjä voi tarkastella lukuja jaoteltuina kategorioihin koulutus, väestö ja työllisyys.  
+
+Käyttöliittymästä löytyy nappeja, joilla käyttäjä voi suorittaa muutamia ennaltamääritettyjä kyselyitä, kuten "Väkiluvultaa suurimmat kunnat" ja "Huonoin työllisyysaste". Näiden kyselyiden tulokset väritetään kartalle ja tulokset esitetään vertailussa kartan vierellä.  
+
+Käyttäjän on myös mahdollista luoda rajatuin ehdoin omia kyselyitä, joiden tulokset esitetään ylläkuvatulla tavalla.  
+
+Esitettävä data on haettu tilastokeskuksen avoimesta rajapinnasta csv-muodossa, josta rakensin tätä sovellusta varten relaatiotietokannan.  
 
 Käyttöliittymä on toteutettu React-kirjastolla ja se löytyy frontend kansiosta. Palvelintoteutus on toteutettu Node.js + express.js pohjalta ja se löytyy backend kansiosta. Tietovarastona toimii PostgreSQL tietokanta. Tietokannan luontitiedosto init.sql löytyy repositorion juuresta.  
 
