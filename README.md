@@ -5,7 +5,10 @@ Teemu Tuomela H8705
 TTMS0500 Web-ohjelmointi  
 
 Sovellus on nähtävillä DigitalOcean:in palvelimella osoitteessa:
-[http://146.185.183.122/](http://146.185.183.122/)
+[http://146.185.183.122/](http://146.185.183.122/)  
+
+Tämä repositorio zip-paketissa:
+[http://student.labranet.jamk.fi/~H8705/ttms0500/kuntakartta-master.zip](http://student.labranet.jamk.fi/~H8705/ttms0500/kuntakartta-master.zip)  
 
 ## Yleiskuvaus
 ![Sovellus](readme-images/app.jpg)
